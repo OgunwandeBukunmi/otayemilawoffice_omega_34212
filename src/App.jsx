@@ -6,7 +6,7 @@ import {
   FaLinkedin, FaTwitter, FaFacebook, FaInstagram, FaTrophy,
   FaMedal, FaCertificate, FaChevronDown, FaBars, FaTimes,
   FaArrowRight, FaCheckCircle, FaUserTie, FaLandmark, FaHeart,
-  FaFileContract, FaBuilding, FaCar, FaGlobeAmericas, FaQuoteLeft
+  FaFileContract, FaCar, FaGlobeAmericas, FaQuoteLeft
 } from "react-icons/fa";
 
 const GOLD = "#C9A84C";
