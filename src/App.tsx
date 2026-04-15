@@ -731,7 +731,18 @@ function CTASection() {
 }
 
 function Contact() {
-  const [form, setForm] = useState<{ name: string; email: string; subject: string; message: string }>({
+  type FormState = {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }
+  const fields = [
+    ["name", "Full Name", "text"],
+    ["email", "Email Address", "email"],
+  ] as const;
+
+  const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
     subject: "",
@@ -806,7 +817,7 @@ function Contact() {
               style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               <div className="grid sm:grid-cols-2 gap-5">
-                {[["name", "Full Name", "text"], ["email", "Email Address", "email"]].map(([field, placeholder, type]) => (
+                {fields.map(([field, placeholder, type]) => (
                   <div key={field}>
                     <input
                       type={type}
