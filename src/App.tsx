@@ -68,7 +68,7 @@ function Navbar() {
 
   const links = ["Home", "About", "Practice Areas", "Testimonials", "Contact"];
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     const el = document.getElementById(id.toLowerCase().replace(/ /g, "-"));
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
@@ -235,7 +235,7 @@ function Hero() {
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: `0 0 32px rgba(201,168,76,0.45)` }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="px-8 py-4 rounded text-base font-bold flex items-center justify-center gap-2"
             style={{
               background: `linear-gradient(135deg, ${GOLD}, #b8922e)`,
@@ -249,7 +249,7 @@ function Hero() {
           <motion.button
             whileHover={{ scale: 1.04, background: "rgba(255,255,255,0.08)" }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
             className="px-8 py-4 rounded text-base font-semibold text-white transition-all"
             style={{
               border: "1px solid rgba(255,255,255,0.25)",
@@ -401,7 +401,7 @@ function About() {
               variants={fadeUp}
               whileHover={{ scale: 1.04, boxShadow: `0 0 28px rgba(201,168,76,0.35)` }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="px-7 py-3.5 rounded font-semibold text-sm flex items-center gap-2"
               style={{ background: NAVY, color: "#fff", fontFamily: "'Georgia', serif", letterSpacing: "0.04em" }}
             >
@@ -526,7 +526,7 @@ function WhyChooseUs() {
               variants={fadeUp}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="px-7 py-3.5 rounded font-semibold text-sm"
               style={{
                 background: `linear-gradient(135deg, ${GOLD}, #b8922e)`,
@@ -712,7 +712,7 @@ function CTASection() {
           <motion.button
             whileHover={{ scale: 1.06, boxShadow: `0 0 40px rgba(201,168,76,0.5)` }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="px-10 py-4 rounded font-bold text-base flex items-center gap-3 mx-auto"
             style={{
               background: `linear-gradient(135deg, ${GOLD}, #b8922e)`,
@@ -731,10 +731,15 @@ function CTASection() {
 }
 
 function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState<{ name: string; email: string; subject: string; message: string }>({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSent(true);
     setTimeout(() => setSent(false), 4000);
