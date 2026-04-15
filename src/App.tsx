@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import type { ReactNode } from "react";
 import {
   FaBalanceScale, FaShieldAlt, FaHandshake, FaHome, FaBriefcase,
   FaGavel, FaUsers, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt,
@@ -9,17 +10,36 @@ import {
   FaFileContract, FaCar, FaGlobeAmericas, FaQuoteLeft
 } from "react-icons/fa";
 
+type Testimonial = {
+  name: string;
+  role: string;
+  quote: string;
+};
+
+type FadeSectionProps = {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+};
+
 const GOLD = "#C9A84C";
 const NAVY = "#0B1F3A";
 const NAVY_LIGHT = "#112B52";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  },
 };
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
-function FadeSection({ children, className = "", delay = 0 }) {
+function FadeSection({ children, className = "", delay = 0 }: FadeSectionProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
@@ -554,7 +574,7 @@ function WhyChooseUs() {
 
 function Testimonials() {
   const [active, setActive] = useState(0);
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       name: "Margaret T.",
       role: "CEO, Westfield Corp.",
@@ -789,11 +809,10 @@ function Contact() {
                       value={form[field]}
                       onChange={(e) => setForm({ ...form, [field]: e.target.value })}
                       required
-                      className="w-full px-4 py-3.5 rounded-lg text-sm text-white placeholder-gray-500 outline-none focus:ring-1 transition-all"
+                      className="w-full px-4 py-3.5 rounded-lg text-sm text-white placeholder-gray-500 outline-none focus:ring-1  focus:ring-[color:#C9A84C] transition-all"
                       style={{
                         background: "rgba(255,255,255,0.06)",
                         border: "1px solid rgba(255,255,255,0.1)",
-                        focusRingColor: GOLD,
                       }}
                     />
                   </div>
