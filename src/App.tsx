@@ -201,7 +201,7 @@ function Hero() {
           className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
           style={{ background: "rgba(201,168,76,0.12)", border: `1px solid rgba(201,168,76,0.3)`, color: GOLD, fontFamily: "'Georgia', serif" }}
         >
-          <FaMedal size={14} /> Rated #1 Legal Firm — 2019–2025
+          <FaMedal size={14} /> Rated #1 Legal Firm in Ijebu Ode
         </motion.div>
 
         <motion.h1
