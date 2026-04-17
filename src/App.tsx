@@ -193,7 +193,7 @@ function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-5" style={{ background: "#4a90e2", filter: "blur(100px)" }} />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto  px-6 text-center mt-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -211,9 +211,8 @@ function Hero() {
           className="text-5xl md:text-7xl font-bold leading-tight mb-6 text-white"
           style={{ fontFamily: "'Georgia', serif", lineHeight: 1.12 }}
         >
-          Trusted Legal Experts
+          Your Trusted  <span style={{ color: GOLD }}>Partner</span>  in Justice
           <br />
-          <span style={{ color: GOLD }}>You Can Rely On</span>
         </motion.h1>
 
         <motion.p
@@ -222,8 +221,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          With over 25 years of courtroom excellence, OTAYEMI LAW OFFICE delivers
-          strategic legal counsel and unwavering advocacy across a full spectrum of practice areas.
+          Providing expert legal guidance and dedicated advocacy to protect your rights and secure fair outcomes.
         </motion.p>
 
         <motion.div
@@ -348,7 +346,6 @@ function About() {
                       <FaBalanceScale style={{ color: GOLD, fontSize: 28 }} />
                       <div>
                         <p className="text-white font-bold text-lg" style={{ fontFamily: "'Georgia', serif" }}>OTAYEMI LAW OFFICE</p>
-                        <p className="text-gray-400 text-sm">Est. 1999 · New York, NY</p>
                       </div>
                     </div>
                   </div>
@@ -358,7 +355,7 @@ function About() {
                 className="absolute -bottom-6 -right-6 px-7 py-5 rounded-lg"
                 style={{ background: `linear-gradient(135deg, ${GOLD}, #b8922e)`, boxShadow: "0 12px 40px rgba(201,168,76,0.35)" }}
               >
-                <p className="text-3xl font-bold" style={{ color: NAVY, fontFamily: "'Georgia', serif" }}>25+</p>
+                <p className="text-3xl font-bold" style={{ color: NAVY, fontFamily: "'Georgia', serif" }}>5+</p>
                 <p className="text-sm font-semibold" style={{ color: NAVY }}>Years of Excellence</p>
               </div>
               <div
@@ -380,8 +377,8 @@ function About() {
               Justice Is Not Just a Word. It's Our Promise.
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-600 text-base leading-relaxed mb-6">
-              Founded in 1999, OTAYEMI LAW OFFICE has grown into one of the most respected
-              legal firms in the country. Our team of 40+ seasoned attorneys brings decades of
+              OTAYEMI LAW OFFICE has grown into one of the most respected
+              legal firms in the country. Our team of 10+ seasoned attorneys brings decades of
               combined experience to every case, delivering results that speak for themselves.
             </motion.p>
             <motion.p variants={fadeUp} className="text-gray-600 text-base leading-relaxed mb-8">
@@ -509,7 +506,7 @@ function WhyChooseUs() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <FadeSection>
             <motion.span variants={fadeUp} className="text-xs font-bold uppercase tracking-widest" style={{ color: GOLD }}>
-              Why Harrington
+              Why OTAYEMI
             </motion.span>
             <motion.h2
               variants={fadeUp}
